@@ -5,256 +5,21 @@
   <title>{{ page.title }} | CCC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --white: #fff;
-      --text-yellow: #DAA520;     /* Darker GoldenRod yellow */
-      --text-yellow-hover: #F0C040;/* Lighter hover for the darker yellow */
-      --primary-text-color-content: #000000; /* For H1 in main content */
-      --content-text-color: #333; /* Slightly softer black for main content */
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
-      background-color: var(--white);
-      color: var(--content-text-color);
-      line-height: 1.75;
-      font-size: 1rem;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    main h1, main h2, main h3, main h4 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    main h1 {
-      color: var(--primary-text-color-content);
-      font-size: 2rem;
-    }
-    main h2 {
-      font-size: 1.6rem;
-    }
-    main h3 {
-      font-size: 1.3rem;
-    }
-    main p {
-      margin-bottom: 1rem;
-      font-size: 1.05rem;
-    }
-
-    header {
-      padding: 1.5rem 1rem;
-    }
-
-    .header-content-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .logo-and-title-area {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 1rem;
-      width: 100%;
-    }
-
-    .site-logo-link {
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
-
-    .site-logo {
-      max-height: 60px;
-      width: auto;
-      display: block;
-    }
-
-    .header-title-group .main-site-title,
-    .header-title-group .site-subtitle-header {
-      color: var(--text-yellow);
-      margin: 0;
-      line-height: 1.2;
-    }
-
-    .header-title-group .main-site-title {
-      font-size: 1.9rem;
-      font-weight: 700;
-    }
-
-    .header-title-group .site-subtitle-header {
-      font-size: 1rem;
-      font-weight: 400;
-    }
-
-    nav.header-navigation {
-      display: flex;
-      gap: 15px;
-      width: auto;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav.header-navigation a {
-      color: var(--text-yellow);
-      text-decoration: none;
-      padding: 0.5rem 0.8rem;
-      font-weight: 600;
-      border: none;
-      background-color: transparent;
-      border-radius: 4px;
-      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    }
-
-    nav.header-navigation a:hover {
-      color: var(--text-yellow-hover);
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 960px;
-      margin: 0 auto;
-      margin-top: 1rem;
-      flex: 1;
-    }
-
-    /* --- FOOTER STYLES --- */
-    footer {
-      margin-top: auto;
-      padding: 2rem 1rem 1.5rem 1rem; /* Increased top padding */
-      border-top: 1px solid #eaeaea; /* Light separator line */
-      color: var(--text-yellow); /* Default text color for footer */
-    }
-
-    .footer-container {
-      max-width: 960px; /* Consistent with main content width */
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
-      justify-content: space-between; /* Space out sections */
-      gap: 2rem; /* Gap between footer sections */
-      margin-bottom: 1.5rem; /* Space above copyright */
-      text-align: left; /* Align text to left within sections */
-    }
-
-    .footer-section {
-      flex: 1; /* Allow sections to grow */
-      min-width: 200px; /* Minimum width before wrapping */
-    }
-
-    .footer-section h3 {
-      font-size: 1.1rem;
-      margin-top: 0;
-      margin-bottom: 0.75rem;
-      color: var(--text-yellow);
-      font-weight: 600;
-    }
-
-    .footer-section p,
-    .footer-section ul,
-    .footer-section li {
-      font-size: 0.9rem;
-      margin-bottom: 0.4rem;
-      line-height: 1.6;
-      color: var(--text-yellow);
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .footer-section a {
-      color: var(--text-yellow);
-      text-decoration: none;
-      transition: color 0.2s ease-in-out;
-    }
-
-    .footer-section a:hover {
-      color: var(--text-yellow-hover);
-      text-decoration: underline;
-    }
-
-    .footer-copyright {
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--text-yellow);
-      padding-top: 1rem; /* Space above copyright if sections wrap */
-      border-top: 1px dashed rgba(218, 165, 32, 0.3); /* Subtle separator for copyright */
-      margin-top: 1rem; /* Only if footer-container has content that wraps and pushes copyright down */
-    }
-    /* If .footer-container doesn't cause a significant height, this rule can be simplified: */
-    .footer-container + .footer-copyright { /* Apply border/margin-top only if .footer-container is followed by .footer-copyright */
-        /* margin-top: 1.5rem; /* Ensures space even if content above is short */
-    }
-
-
-    /* --- RESPONSIVE ADJUSTMENTS --- */
-    @media (max-width: 768px) {
-      header {
-        padding: 1rem;
-      }
-      .logo-and-title-area {
-        margin-bottom: 0.75rem;
-      }
-      .site-logo {
-        max-height: 50px;
-      }
-      .header-title-group .main-site-title {
-        font-size: 1.6rem;
-      }
-      .header-title-group .site-subtitle-header {
-        font-size: 0.9rem;
-      }
-      nav.header-navigation {
-        gap: 10px;
-      }
-      nav.header-navigation a {
-        padding: 0.4rem 0.6rem;
-      }
-      main {
-        padding: 1.5rem 1rem;
-        margin-top: 0.5rem;
-      }
-      .footer-container {
-        flex-direction: column; /* Stack footer sections on smaller screens */
-        align-items: center;   /* Center stacked sections */
-        text-align: center;    /* Center text within stacked sections */
-        gap: 1.5rem;
-      }
-      .footer-section {
-        width: 100%; /* Make each section take full width when stacked */
-        max-width: 350px; /* Optional: constrain width when centered */
-      }
-      .footer-section ul {
-        /* For centered text, ensure list items are also centered if they wrap */
-        display: inline-block; /* Or other centering techniques for list items */
-        text-align: center;
-      }
-    }
-  </style>
 </head>
-<body>
+<body style="justify-content: center;">
 
   <header>
-    <div class="header-content-wrapper">
-      <div class="logo-and-title-area">
-        <a href="{{ '/' | relative_url }}" class="site-logo-link">
+    <div>
+      <div>
+        <a href="{{ '/' | relative_url }}" >
           <img src="{{ '/assets/images/ccc-logo.png' | relative_url }}" alt="Clean Campus Committee Logo" class="site-logo">
         </a>
-        <div class="header-title-group">
-          <h1 class="main-site-title">Clean Campus Committee</h1>
-          <p class="site-subtitle-header">Indian Institute of Technology</p>
+        <div>
+          <h1 class="text-center">Clean Campus Committee</h1>
+          <p>Indian Institute of Technology</p>
         </div>
       </div>
-      <nav class="header-navigation">
+      <nav>
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="{{ '/activities/' | relative_url }}">Activities</a>
         <a href="{{ '/dashboard/' | relative_url }}">Dashboard</a>
@@ -268,22 +33,22 @@
   </main>
 
   <footer>
-    <div class="footer-container">
-      <div class="footer-section footer-contact">
-        <h3 style="font-size:smaller" >Contact Us </h3>
-        <p style="font-size:smaller">Email: <a href="mailto:">sec_hostel@smail.iitpkd.ac.in</a></p>
-        <p style="font-size:smaller">Office: Student Activity Center (SAC), Room 203</p>
+    <div>
+      <div>
+        <h3>Contact Us </h3>
+        <p>Email: <a href="mailto:">sec_hostel@smail.iitpkd.ac.in</a></p>
+        <p>Office: Student Activity Center (SAC), Room 203</p>
       </div>
-      <div class="footer-section footer-quick-links">
-        <h3 style="font-size:smaller">Quick Links</h3>
+      <div>
+        <h3 >Quick Links</h3>
         <ul>
-          <li style="font-size:smaller"><a href="https://iitpkd.ac.in/">IIT Palakkad</a></li>
-          <li style="font-size:smaller"><a href="{{ '/about/' | relative_url }}">About Us</a></li>
+          <li><a href="https://iitpkd.ac.in/">IIT Palakkad</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About Us</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-copyright">
-      <p style="font-size:smaller">© {{ site.time | date: '%Y' }} Campus Coordination Committee (CCC), Indian Institute of Technology. All rights reserved.</p>
+    <div>
+      <p>© {{ site.time | date: '%Y' }} Campus Coordination Committee (CCC), Indian Institute of Technology. All rights reserved.</p>
     </div>
   </footer>
 </body>
