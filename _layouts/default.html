@@ -1,25 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }} | CCC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body style="justify-content: center;">
 
+  <style>
+  body {
+    margin: 0;
+  }
+  .logo-title-container {
+    height: 100px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .CCCImage {
+    height: 100px;
+    width: 100px;
+    width: auto;
+  }
+
+  .logotext{
+    color: rgb(8, 50, 0);
+  }
+  .main-container {
+    max-width: 1000px;
+    margin: 0 auto;   
+  }
+
+  .footer-container{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    max-width: 2000px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+  }
+
+  .navbar{
+    width: 1000px;
+    display: flex;
+    margin: 0 auto;
+    padding: 0 100px;
+  }
+
+
+</style>
+
+</head>
+
+<body>
   <header>
     <div>
-      <div>
-        <a href="{{ '/' | relative_url }}" >
-          <img src="{{ '/assets/images/ccc-logo.png' | relative_url }}" alt="Clean Campus Committee Logo" class="site-logo">
+      <div class="logo-title-container">
+        <a href="{{ '/' | relative_url }}" class="logo-title">
+          <img src="{{ '/assets/images/ccc-logo.png' | relative_url }}" alt="Clean Campus Committee Logo" class="CCCImage">
         </a>
         <div>
-          <h1 class="text-center">Clean Campus Committee</h1>
-          <p>Indian Institute of Technology</p>
+          <h1 class="logotext">Clean Campus Committee</h1>
+          <p  class="logotext">Indian Institute of Technology Palakkad</p>
         </div>
       </div>
-      <nav>
+
+      <nav class="navbar">
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="{{ '/activities/' | relative_url }}">Activities</a>
         <a href="{{ '/dashboard/' | relative_url }}">Dashboard</a>
@@ -28,26 +78,16 @@
     </div>
   </header>
 
-  <main>
+  <main class="main-container">
     {{ content }}
   </main>
 
-  <footer>
+  <hr>
+  <footer class="footer-container">
     <div>
-      <div>
-        <h3>Contact Us </h3>
-        <p>Email: <a href="mailto:">sec_hostel@smail.iitpkd.ac.in</a></p>
-        <p>Office: Student Activity Center (SAC), Room 203</p>
-      </div>
-      <div>
-        <h3 >Quick Links</h3>
-        <ul>
-          <li><a href="https://iitpkd.ac.in/">IIT Palakkad</a></li>
-          <li><a href="{{ '/about/' | relative_url }}">About Us</a></li>
-        </ul>
-      </div>
-    </div>
-    <div>
+      <h4>Contact Us </h4>
+      <p>Email: <a href="mailto:">sec_hostel@smail.iitpkd.ac.in</a></p>
+      <p>Office: Student Activity Center (SAC), Room 203</p>
       <p>© {{ site.time | date: '%Y' }} Campus Coordination Committee (CCC), Indian Institute of Technology. All rights reserved.</p>
     </div>
   </footer>
