@@ -8,9 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-  body {
-    margin: 0;
-  }
+  
   .logo-title-container {
     height: 100px;
     justify-content: center;
@@ -45,13 +43,30 @@
   }
 
   .navbar{
-    width: 1000px;
-    display: flex;
+    color: black;
+    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 100px;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    gap: 7rem;
+    justify-content: center;
+  }
+  .navbar a {
+    color: #064e3b; 
+    }
+
+  .navbar a:hover {
+    color: #10b981; 
   }
 
 
+  @media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+} 
 </style>
 
 </head>
