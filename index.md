@@ -20,7 +20,7 @@ To cultivate a campus culture where cleanliness and environmental responsibility
 
 Our efforts are organized across several key zones within the campus, each with specific activities aimed at maintaining and improving our surroundings.
 
-### Events
+<!-- ### Events
 
 {% for entry in site.data.events.list %}
   <div>
@@ -29,7 +29,7 @@ Our efforts are organized across several key zones within the campus, each with 
     <p><strong>Roll No.:</strong> {{ entry.rollno }}</p>
     <p><strong>FA email:</strong> {{ entry.faemail }}</p>
   </div>
-{% endfor %}
+{% endfor %} -->
 
 
 Join us in making our campus a model of cleanliness and sustainability!
