@@ -20,16 +20,6 @@ To cultivate a campus culture where cleanliness and environmental responsibility
 
 Our efforts are organized across several key zones within the campus, each with specific activities aimed at maintaining and improving our surroundings.
 
-<!-- ### Events
-
-{% for entry in site.data.events.list %}
-  <div>
-    <p><strong>Name:</strong> {{ entry.name }}</p>
-    <p><strong>Year:</strong> {{ entry.year }}</p>
-    <p><strong>Roll No.:</strong> {{ entry.rollno }}</p>
-    <p><strong>FA email:</strong> {{ entry.faemail }}</p>
-  </div>
-{% endfor %} -->
 
 
 Join us in making our campus a model of cleanliness and sustainability!
@@ -47,11 +37,6 @@ Join us in making our campus a model of cleanliness and sustainability!
 
 <br>
 
-<!-- <div style="text-align:center">
-  {% for image in site.data.images %}
-    <span class="dot" onclick="currentSlide({{ forloop.index }})"></span>
-  {% endfor %}
-</div> -->
 
 <style>
 .slideshow-container {
@@ -59,21 +44,7 @@ Join us in making our campus a model of cleanliness and sustainability!
   position: relative;
   margin: auto;
 }
-/* .mySlides {
-  display: none;
-}
-.mySlides img {
-  width: 100%;
-  border-radius: 8px;
-}
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-} */
+
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -95,19 +66,6 @@ Join us in making our campus a model of cleanliness and sustainability!
 .next {
   right: 0;
 }
-/* .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 4px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.3s;
-}
-.active, .dot:hover {
-  background-color: #717171;
-} */
 </style>
 
 <script>
