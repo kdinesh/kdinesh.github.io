@@ -90,6 +90,5 @@ function showSlides(n) {
     dots[i].classList.remove("active");
   }
   slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].classList.add("active");
 }
 </script>
