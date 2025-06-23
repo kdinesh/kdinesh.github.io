@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Welcome to the Clean Campus Committee
-permalink: /activities
+permalink: /activities/
 ---
 
 ## Activities
+
+Some activities
