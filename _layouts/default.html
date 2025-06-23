@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#222222">
-  <link rel="icon" href="/assets/images/ccc-logo.png">
   <meta charset="UTF-8">
   <title>{{ page.title }} | CCC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -107,18 +104,5 @@
       <p>© {{ site.time | date: '%Y' }} Campus Coordination Committee (CCC), Indian Institute of Technology. All rights reserved.</p>
     </div>
   </footer>
-  <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(function (reg) {
-          console.log("Service Worker registered!", reg);
-        })
-        .catch(function (err) {
-          console.log("Service Worker registration failed:", err);
-        });
-    });
-  }
-</script>
 </body>
 </html>

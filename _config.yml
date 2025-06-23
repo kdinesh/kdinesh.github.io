@@ -17,9 +17,6 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-include:
-  - manifest.json
-  - service-worker.js
 title: Clean Campus Committee - IIT Palakkad
 description: Official website of the Clean Campus Committee at IIT Palakkad, detailing our activities, zones, and efforts to maintain a pristine campus environment.
 email: kdinesh@iitpkd.ac.in
