@@ -6,6 +6,7 @@ const urlsToCache = [
   '/dashboard/',
   '/404.html',
   '/assets/images/ccc-logo.png',
+  '/assets/images/ccc-logo192x192.png',
   '/assets/images/favicon.ico',
   '/assets/images/img1.jpg',
   '/assets/images/img2.jpg',
