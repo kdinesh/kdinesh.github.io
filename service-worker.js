@@ -1,9 +1,15 @@
-const CACHE_NAME = 'ccc-cache-v1';
+const CACHE_NAME = 'ccc-cache-v2';
 const urlsToCache = [
   '/',
+  '/about/',
+  '/activities/',
+  '/dashboard/',
   '/404.html',
-  '/about.html',
   '/assets/images/ccc-logo.png',
+  '/assets/images/favicon.ico',
+  '/assets/images/img1.jpg',
+  '/assets/images/img2.jpg',
+  '/assets/images/img3.jpg',
 ];
 
 self.addEventListener('install', event => {
@@ -14,6 +20,8 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(response => response || fetch(event.request))
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request).catch(() => caches.match('/404.html'));
+    })
   );
 });
