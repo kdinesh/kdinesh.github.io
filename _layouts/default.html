@@ -56,19 +56,19 @@
   }
   .navbar a {
     color: #064e3b; 
-    }
+  }
 
   .navbar a:hover {
     color: #10b981; 
   }
 
   @media (max-width: 700px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-} 
-</style>
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  } 
+  </style>
 
 </head>
 
@@ -107,13 +107,42 @@
       <p>© {{ site.time | date: '%Y' }} Campus Coordination Committee (CCC), Indian Institute of Technology. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Google Sign-In -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
   <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js')
-      .then(reg => console.log('SW registered', reg))
-      .catch(err => console.log('SW registration failed', err));
+      .then(reg => console.log('[Main] SW registered:', reg))
+      .catch(err => console.error('[Main] SW registration failed:', err));
+  }
+
+  window.addEventListener('load', () => {
+    google.accounts.id.initialize({
+      client_id: '609906726425-0ksuluhvarh5u2lu00s68dqk4cit4e8t.apps.googleusercontent.com',
+      callback: handleCredentialResponse,
+    });
+    google.accounts.id.prompt();
+  });
+
+  function handleCredentialResponse(response) {
+    const payload = JSON.parse(atob(response.credential.split('.')[1]));
+    const userEmail = payload.email;
+
+    if (userEmail.endsWith('@smail.iitpkd.ac.in')) {
+      console.log('[Main] ✅ IITPKD verified — caching allowed.');
+      if (navigator.serviceWorker.controller) {
+        navigator.serviceWorker.controller.postMessage('cache-contents');
+      }
+    } else {
+      console.log('[Main] ❌ Not IITPKD — blocking cache.');
+      document.body.innerHTML = `
+        <h1>Unauthorized</h1>
+        <p>You must sign in with your @smail.iitpkd.ac.in account to use this app offline.</p>
+      `;
+    }
   }
   </script>
-
 </body>
 </html>
