@@ -5,6 +5,8 @@ const urlsToCache = [
   '/activities/',
   '/dashboard/',
   '/404.html',
+  '/offline.html',  
+   '/login.html',         // <-- new
   '/assets/images/ccc-logo.png',
   '/assets/images/ccc-logo192x192.png',
   '/assets/images/favicon.ico',
@@ -13,24 +15,16 @@ const urlsToCache = [
   '/assets/images/img3.jpg',
 ];
 
-// ❌ No auto-cache on install
 self.addEventListener('install', event => {
-  console.log('[SW] Installed — no caching yet.');
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
+  );
 });
 
-// ✅ Only cache if explicitly told to
-self.addEventListener('message', event => {
-  if (event.data === 'cache-contents') {
-    console.log('[SW] Caching files...');
-    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache));
-  }
-});
-
-// Normal fetch fallback
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request).catch(() => caches.match('/404.html'));
-    })
+    caches.match(event.request)
+      .then(resp => resp || fetch(event.request))
+      .catch(() => caches.match('/offline.html'))
   );
 });
