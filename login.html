@@ -52,18 +52,15 @@
       window.location.replace('/');
     }
     function onSignIn(response) {
-      // decode the ID token
       const payload = JSON.parse(atob(response.credential.split('.')[1]));
       const email = payload.email || '';
+      const name  = payload.name  || '';
       if (email.endsWith('iitpkd.ac.in')) {
-        // mark as authenticated
         localStorage.setItem('ccc_logged_in', '1');
-
-        // now register the SW and cache
+        localStorage.setItem('username', name);
         navigator.serviceWorker.register('/service-worker.js')
           .then(reg => {
             console.log('SW registered after login', reg);
-            // redirect into your app shell
             window.location.replace('/');
           })
           .catch(err => {

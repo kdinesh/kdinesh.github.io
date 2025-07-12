@@ -101,7 +101,8 @@
       <div class="logo-title-container">
         <a href="{{ '/' | relative_url }}" class="logo-title">
           <img src="{{ '/assets/images/ccc-logo.png' | relative_url }}" alt="Clean Campus Committee Logo" class="CCCImage">
-        </a>
+        </a>            // redirect into your app shell
+
         <div>
           <h1 class="logotext">Clean Campus Committee</h1>
           <p  class="logotext">Indian Institute of Technology Palakkad</p>
@@ -116,7 +117,15 @@
       </nav>
     </div>
   </header>
-
+  <p id="greeting" style="
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    font-weight: bold;
+  ">
+    Hi, <span id="username">Username</span>
+  </p>
   <main class="main-container">
     {{ content }}
   </main>
@@ -130,7 +139,19 @@
       <p>© {{ site.time | date: '%Y' }} Campus Coordination Committee (CCC), Indian Institute of Technology. All rights reserved.</p>
     </div>
   </footer>
-  
+  <script>
+    const isStandalone =
+      window.matchMedia('(display-mode: standalone)').matches ||
+      window.navigator.standalone === true;
+
+    if (isStandalone && localStorage.getItem('ccc_logged_in') === '1') {
+      const name = localStorage.getItem('username') || 'User';
+      document.getElementById('username').textContent = name.split(' ')[0];
+      console.log(name)
+      document.getElementById('greeting').style.display = 'block';
+    }
+  </script>
+
 
 
 </body>

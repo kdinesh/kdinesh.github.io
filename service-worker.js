@@ -6,7 +6,7 @@ const urlsToCache = [
   '/dashboard/',
   '/404.html',
   '/offline.html',  
-   '/login.html',         // <-- new
+  '/login.html',
   '/assets/images/ccc-logo.png',
   '/assets/images/ccc-logo192x192.png',
   '/assets/images/favicon.ico',
