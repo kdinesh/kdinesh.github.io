@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.kdish.ccc",
+      "sha256_cert_fingerprints": [
+        "FF:14:EA:6D:1E:4A:EE:DA:BC:0B:44:88:EB:5C:D5:75:54:7B:F8:8C:2F:E7:E0:D6:B9:05:BB:2D:FA:9A:F2:54"
+      ]
+    }
+  }
+]
