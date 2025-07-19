@@ -33,7 +33,7 @@
     window.location.replace('/login.html');
   }
   </script>
-  <style>  
+<style>  
   .logo-title-container {
     height: 100px;
     justify-content: center;
@@ -41,25 +41,40 @@
     align-items: center;
     gap: 1.5rem;
     margin-bottom: 2rem;
+    padding: 0 1rem;
   }
 
   .CCCImage {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     width: auto;
+    flex-shrink: 0;
   }
 
   .logotext{
     color: rgb(8, 50, 0);
   }
+
+  .logotext h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .logotext p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
   .main-container {
     max-width: 1000px;
-    margin: 0 auto;   
+    margin: 0 auto;
+    padding: 0 1rem;
   }
 
   .footer-container{
     margin: 0;
-    padding: 0;
+    padding: 1rem;
     font-size: 15px;
     max-width: 2000px;
     display: flex;
@@ -74,23 +89,97 @@
     margin: 0 auto;
     padding: 0 1rem;
     flex-wrap: wrap;
-    gap: 7rem;
+    gap: 3rem;
     justify-content: center;
+    display: flex;
   }
+  
   .navbar a {
-    color: #064e3b; 
-    }
+    color: #064e3b;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
 
   .navbar a:hover {
     color: #10b981; 
   }
 
-  @media (max-width: 700px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
+  #greeting {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
-} 
+
+  #userphoto {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 0.5rem;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .logo-title-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      height: auto;
+      padding: 1rem;
+    }
+
+    .CCCImage {
+      height: 60px;
+      width: 60px;
+    }
+
+    .logotext h1 {
+      font-size: 1.5rem;
+    }
+
+    .logotext p {
+      font-size: 0.8rem;
+    }
+
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    .navbar a {
+      padding: 0.75rem 1.5rem;
+      width: 100%;
+      text-align: center;
+      border-radius: 0.25rem;
+      transition: background-color 0.2s;
+    }
+
+    .footer-container {
+      padding: 1rem 0.5rem;
+      text-align: center;
+    }
+
+    .footer-container p {
+      font-size: 0.8rem;
+    }
+
+    #greeting {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin: 1rem;
+      text-align: center;
+    }
+  }
 </style>
 
 </head>
@@ -116,14 +205,9 @@
       </nav>
     </div>
   </header>
-  <p id="greeting" style="
-    display: none;
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    font-weight: bold;
-  ">
+  <p id="greeting">
     Hi, <span id="username">Username</span>
+    <img id="userphoto" src="" alt="Profile">
   </p>
   <main class="main-container">
     {{ content }}
@@ -145,7 +229,14 @@
 
     if (isStandalone && localStorage.getItem('ccc_logged_in') === '1') {
       const name = localStorage.getItem('username') || 'User';
+      const photo = localStorage.getItem('userphoto') || '';
       document.getElementById('username').textContent = name.split(' ')[0];
+      
+      if (photo) {
+        const photoImg = document.getElementById('userphoto');
+        photoImg.src = photo;
+        photoImg.style.display = 'inline';
+      }
       console.log(name)
       document.getElementById('greeting').style.display = 'block';
     }

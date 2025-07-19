@@ -55,19 +55,23 @@
       const payload = JSON.parse(atob(response.credential.split('.')[1]));
       const email = payload.email || '';
       const name  = payload.name  || '';
+      const photo = payload.picture || ''; 
+
       if (email.endsWith('iitpkd.ac.in')) {
         localStorage.setItem('ccc_logged_in', '1');
         localStorage.setItem('username', name);
+        localStorage.setItem('userphoto', photo);
+
         navigator.serviceWorker.register('/service-worker.js')
-          .then(reg => {
-            console.log('SW registered after login', reg);
-            window.location.replace('/');
-          })
-          .catch(err => {
-            console.error('SW registration failed', err);
-            alert('Couldn’t register service worker — you won’t be offline-capable.');
-            window.location.replace('/');
-          });
+        .then(reg => {
+          console.log('SW registered after login', reg);
+          window.location.replace('/');
+        })
+        .catch(err => {
+          console.error('SW registration failed', err);
+          alert('Couldn’t register service worker — you won’t be offline-capable.');
+          window.location.replace('/');
+        });
       } else {
         alert('You must use your @iitpkd.ac.in account to access this app.');
       }
