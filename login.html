@@ -49,8 +49,13 @@
 
   <script>
     if (localStorage.getItem('ccc_logged_in') === '1') {
-      window.location.replace('/');
+      if (!localStorage.getItem('hostel')) {
+        showHostelDropdown();
+      } else {
+        window.location.replace('/');
+      }
     }
+
     function onSignIn(response) {
       const payload = JSON.parse(atob(response.credential.split('.')[1]));
       const email = payload.email || '';
@@ -62,20 +67,55 @@
         localStorage.setItem('username', name);
         localStorage.setItem('userphoto', photo);
 
-        navigator.serviceWorker.register('/service-worker.js')
-        .then(reg => {
-          console.log('SW registered after login', reg);
-          window.location.replace('/');
-        })
-        .catch(err => {
-          console.error('SW registration failed', err);
-          alert('Couldn’t register service worker — you won’t be offline-capable.');
-          window.location.replace('/');
-        });
+        if (!localStorage.getItem('hostel')) {
+          showHostelDropdown();
+        } else {
+          completeLogin();
+        }
       } else {
         alert('You must use your @iitpkd.ac.in account to access this app.');
       }
     }
+
+    function showHostelDropdown() {
+      const container = document.querySelector('.login-container');
+
+      container.innerHTML = `
+        <h2>Welcome! Select your Hostel</h2>
+        <select id="hostel-select">
+          <option value="">-- Choose Hostel --</option>
+          <option value="Saveri">Saveri</option>
+          <option value="Malhar">Malhar</option>
+          <option value="Tilang">Tilang</option>
+        </select>
+        <button id="confirm-hostel">Continue</button>
+      `;
+
+      document.getElementById('confirm-hostel').addEventListener('click', () => {
+        const selected = document.getElementById('hostel-select').value;
+        if (!selected) {
+          alert("Please select a hostel.");
+          return;
+        }
+
+        localStorage.setItem('hostel', selected);
+        completeLogin();
+      });
+    }
+
+    function completeLogin() {
+      navigator.serviceWorker.register('/service-worker.js')
+      .then(reg => {
+        console.log('SW registered after login', reg);
+        window.location.replace('/');
+      })
+      .catch(err => {
+        console.error('SW registration failed', err);
+        alert('Couldn’t register service worker — you won’t be offline-capable.');
+        window.location.replace('/');
+      });
+    }
   </script>
+
 </body>
 </html>
