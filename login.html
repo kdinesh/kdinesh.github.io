@@ -4,20 +4,18 @@
   <meta charset="UTF-8">
   <title>Login | CCC PWA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Pico for styling, same as default -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css">
-  <!-- Google Sign‑In client library -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <style>
   .login-container {
     height: 100vh;
     display: flex;
-    flex-direction: column;      /* stack children vertically */
-    align-items: center;         /* center horizontally */
-    justify-content: center;     /* center vertically */
-    gap: 1rem;                   /* space between message and button */
-    text-align: center;          /* center text in children */
-    padding: 0 1rem;             /* small side padding for mobile */
+    flex-direction: column;      
+    align-items: center;          
+    justify-content: center;      
+    gap: 1rem;                    
+    text-align: center;           
+    padding: 0 1rem;
   }
 </style>
 
@@ -29,7 +27,6 @@
     for offline access.
   </div>
 
-  <!-- Google Sign-In markup -->
   <div id="g_id_onload"
        data-client_id="609906726425-0ksuluhvarh5u2lu00s68dqk4cit4e8t.apps.googleusercontent.com"
        data-callback="onSignIn"
