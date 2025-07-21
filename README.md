@@ -80,3 +80,57 @@ You can also build an .aab for Google Play:
 
 bubblewrap build --target aab
 The output is in the /output/ directory.
+
+
+🔐 SHA-256 Certificate Fingerprint Setup (for TWA)
+To enable full-screen Trusted Web Activity (TWA) support, link your Android app with your website using a Digital Asset Link.
+
+Why?
+The Digital Asset Link is required to enable full-screen Trusted Web Activity (TWA) support.
+This ensures your APK is verified to open your domain in full-screen mode (without browser UI), using a signed certificate.
+
+🛠 How to Generate
+If you're using Bubblewrap:
+
+For sha 256 key use the below command
+here in place of my-key-alias you should type your key-alias 
+keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-key-alias
+
+
+If you don’t remember the alias:
+You can check it by listing all aliases inside the keystore:
+
+keytool -list -keystore ./android/keystore/android.keystore
+You’ll be asked for the keystore password, and it will show:
+
+Keystore type: JKS
+Keystore provider: SUN
+
+YourAliasNameHere, Jul 20, 2025, PrivateKeyEntry,
+Certificate fingerprint (SHA-256): ...
+
+
+Copy the SHA-256 fingerprint from the output.
+
+🧩 Add to .well-known/assetlinks.json
+
+
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "your.package.name",
+      "sha256_cert_fingerprints": [
+        "YOUR:SHA:256:FINGERPRINT:HERE"    <-- here add our sha-256 finger print
+      ]
+    }
+  }
+]
+
+
+Host this file at:
+
+
+https://yourdomain.com/.well-known/assetlinks.json
+Now, your app can securely open your PWA in full-screen via TWA.
