@@ -49,11 +49,9 @@
 
   <script>
     if (localStorage.getItem('ccc_logged_in') === '1') {
-      if (!localStorage.getItem('hostel')) {
-        showHostelDropdown();
-      } else {
-        window.location.replace('/');
-      }
+      
+      window.location.replace('/');
+      
     }
 
     function onSignIn(response) {
@@ -68,7 +66,7 @@
         localStorage.setItem('userphoto', photo);
 
         if (!localStorage.getItem('hostel')) {
-          showHostelDropdown();
+          showHostelDropdown(); 
         } else {
           completeLogin();
         }
