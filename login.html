@@ -62,8 +62,8 @@
         localStorage.setItem('username', name);
         localStorage.setItem('userphoto', photo);
 
-        if (!localStorage.getItem('hostel')) {
-          showHostelDropdown(); 
+        if (!localStorage.getItem('hostel') || !localStorage.getItem('room_number')) {
+          showHostelDropdown();
         } else {
           completeLogin();
         }
@@ -76,24 +76,34 @@
       const container = document.querySelector('.login-container');
 
       container.innerHTML = `
-        <h2>Welcome! Select your Hostel</h2>
+        <h2>Welcome! Select Your Hostel and Room Number</h2>
+
+        <label for="hostel-select">Choose Hostel:</label>
         <select id="hostel-select">
-          <option value="">-- Choose Hostel --</option>
-          <option value="Saveri">Saveri</option>
-          <option value="Malhar">Malhar</option>
-          <option value="Tilang">Tilang</option>
+          <option value="">-- Select Hostel --</option>
+          <option value="SAVERI">SAVERI</option>
+          <option value="MALHAR">MALHAR</option>
+          <option value="TILANG">TILANG</option>
         </select>
-        <button id="confirm-hostel">Continue</button>
+
+        <label for="room-number">Enter Room Number:</label>
+        <input type="text" id="room-number" placeholder="e.g. B302" />
+
+        <button id="confirm-hostel-room">Continue</button>
       `;
 
-      document.getElementById('confirm-hostel').addEventListener('click', () => {
-        const selected = document.getElementById('hostel-select').value;
-        if (!selected) {
-          alert("Please select a hostel.");
+      document.getElementById('confirm-hostel-room').addEventListener('click', () => {
+        const hostel = document.getElementById('hostel-select').value;
+        const room = document.getElementById('room-number').value.trim();
+
+        if (!hostel || !room) {
+          alert("Please select your hostel and enter your room number.");
           return;
         }
 
-        localStorage.setItem('hostel', selected);
+        localStorage.setItem('hostel', hostel);
+        localStorage.setItem('room_number', room);
+
         completeLogin();
       });
     }
@@ -111,6 +121,7 @@
       });
     }
   </script>
+
 
 </body>
 </html>
