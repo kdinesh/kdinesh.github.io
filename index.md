@@ -5,7 +5,7 @@ permalink: /
 ---
 
 
-## Welcome to the Clean Campus Committee IIT PALAKKAD (CCC)
+## Welcome to the Clean Campus Committee (CCC)
 
 The Clean Campus Committee (CCC) is dedicated to fostering a clean, sustainable, and vibrant environment at the Indian Institute of Technology. We believe that a pristine campus enhances the quality of life, promotes well-being, and inspires excellence.
 
