@@ -11,8 +11,7 @@ The Clean Campus Committee (CCC) was formed from a shared vision among students,
 
 ### Our Name, Logo, and Tagline
 
-|---|
-|![logo](/assets/images/ccc-logo.png)|
+![logo](/assets/images/ccc-logo.png){: .center-block :}
 
 **Name of the Committee:**
 The name "Clean Campus Committee" (CCC) was chosen for its directness and clarity of purpose. It immediately communicates our core mission: to ensure and promote a clean campus. The "Committee" aspect highlights our collaborative and organized approach, involving representatives and leads for various zones and activities.
