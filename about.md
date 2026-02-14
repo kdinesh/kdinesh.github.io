@@ -30,7 +30,7 @@ nominated to the committee from time to time. The current list is as follows:
 * 2024 to current (Office order: IITPKD/DO/CC/2024/23)
     - Shri. Sureshkumar Chekkala (Administration)
     - Shri. Maria Kumar Thelagthoti (Dept. of Electrical Engineering)
-    - Shri. Sukanya K (Dept. of Chemistry)
+    - Sushri. Sukanya K (Dept. of Chemistry)
     - Dr. Yuvaraj K (Dept. of Chemistry)
     - Dr. Kusum Dhochak (Dept. of Physics)
     - Dr. Naga Brahmendra Yadav Gorla (Dept. of Electrical Engineering)
