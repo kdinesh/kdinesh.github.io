@@ -25,6 +25,9 @@ Our efforts are organized across several key zones within the campus, each with 
 
 Join us in making our campus a model of cleanliness and sustainability!
 
+If you have any suggestions or feedback, please let us know through
+[this](/suggestions) page. For our activities, please check [this](/activities) page.
+
 <div class="slideshow-container">
   {% for image in site.data.images %}
     <div class="mySlides fade">
