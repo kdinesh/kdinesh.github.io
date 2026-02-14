@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCC Dashboard
+title: Dashboard
 permalink: /dashboard/
 ---
 

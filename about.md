@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About the CCC
+title: About CCC
 permalink: /about/
 ---
 
@@ -19,3 +19,19 @@ The name "Clean Campus Committee" (CCC) was chosen for its directness and clarit
 *(Or, if you prefer the pre-header statement: "A Clean Campus Inspires a Clear Mind.")*
 
 This tagline emphasizes our belief that collective effort (Unity Through Purpose) leads to tangible results (Cleanliness Through Action). It calls upon every member of the community to join hands for a common goal.
+
+
+### Members of the committee
+The committee is headed by Chairman Board of Governers of IIT Palakkad. The
+Students general secratary and Hostel affairs secratary are members of this
+committee representing the students. In addition, faculty and staff are
+nominated to the committee from time to time. The current list is as follows:
+
+* 2024 to current (Office order: IITPKD/DO/CC/2024/23)
+    - Shri. Sureshkumar Chekkala (Administration)
+    - Shri. Maria Kumar Thelagthoti (Dept. of Electrical Engineering)
+    - Shri. Sukanya K (Dept. of Chemistry)
+    - Dr. Yuvaraj K (Dept. of Chemistry)
+    - Dr. Kusum Dhochak (Dept. of Physics)
+    - Dr. Naga Brahmendra Yadav Gorla (Dept. of Electrical Engineering)
+    - Dr. Krishnamoorthy Dinesh (Dept. of Computer Science and Engineering)

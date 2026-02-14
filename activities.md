@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Welcome to the Clean Campus Committee
+title: Activities
 permalink: /activities/
 ---
 

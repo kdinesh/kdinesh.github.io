@@ -1,6 +1,7 @@
 ---
-layout: default
-title: Welcome to the Clean Campus Committee
+layout: home
+title: Welcome
+banner: "/assets/images/front.jpeg"
 permalink: /
 ---
 
