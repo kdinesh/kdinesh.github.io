@@ -11,7 +11,7 @@ permalink: /suggestions/
    left: 50%;
    border: 0;
    height: 50%;
-   width: 50%;
+   width: 85%;
    text-align: center;
 }
   
