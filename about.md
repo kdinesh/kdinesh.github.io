@@ -31,7 +31,7 @@ nominated to the committee from time to time. The current list is as follows:
     - Shri. Sureshkumar Chekkala (Administration)
     - Shri. Maria Kumar Thelagthoti (Dept. of Electrical Engineering)
     - Sushri. Sukanya K (Dept. of Chemistry)
-    - Dr. Yuvaraj K (Dept. of Chemistry)
+    - Dr. Yuvaraj K (Dept. of Chemistry, **Chairperson**)
     - Dr. Kusum Dhochak (Dept. of Physics)
     - Dr. Naga Brahmendra Yadav Gorla (Dept. of Electrical Engineering)
     - Dr. Krishnamoorthy Dinesh (Dept. of Computer Science and Engineering)
