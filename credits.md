@@ -2,6 +2,7 @@
 layout: default
 title: Credits
 permalink: /credits/
+description: This page contains information about the website credits.
 ---
 
 
