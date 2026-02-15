@@ -2,6 +2,7 @@
 layout: default
 title: Activities
 permalink: /activities/
+description: This page contains a detailed list of all the activites undertaken by the clean campus committee.
 ---
 
 ## Activities

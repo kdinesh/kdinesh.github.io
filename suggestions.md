@@ -2,6 +2,7 @@
 layout: default
 title: Suggestions
 permalink: /suggestions/
+description: This page contains a link a Google form for entering suggestions and recommendations.
 ---
 
 <style>
