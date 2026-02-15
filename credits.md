@@ -13,9 +13,12 @@ building/maintaining this website.
 
 * An initial version of this site was built by [N.
 Sriram](https://github.com/112201019) and [V.
-Rohit](https://github.com/JUTURUVENKATROHTH) of CSE 2022 batch.
+Rohit](https://github.com/JUTURUVENKATROHTH) (2022 batch).
 
-* Data entry of events (in progress) done by student, faculty and staff volunteers.
+* The [campus map](/campusmap/) was built by G. Abhinay and V.Rohit (2022
+  batch).
+
+* Data entry of all events (in progress) is done by student, faculty and staff volunteers.
 
 Thank you for all your contributions !
 
