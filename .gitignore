@@ -5,3 +5,6 @@ _site
 vendor
 androidapp/
 .bundle
+node_modules
+package-lock.json
+package.json

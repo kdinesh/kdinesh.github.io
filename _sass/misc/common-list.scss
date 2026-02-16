@@ -1,3 +1,4 @@
+@use "sass:color";
 /**
  * Common list
  */
@@ -27,7 +28,7 @@
       transition: background 0.2s;
 
       &:hover {
-        background-color: mix($theme-color, #eaeaea, 20%);
+        background-color: color.mix($theme-color, #eaeaea, 20%);
       }
     }
 
