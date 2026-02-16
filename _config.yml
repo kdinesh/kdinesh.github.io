@@ -67,10 +67,10 @@ author: Clean Campus Committee, IIT Palakkad
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "(c) 2024-{currentYear} {author}"
+copyright: "(c) 2024-{currentYear}, {author}"
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://kdinesh.github.io" # the base hostname & protocol for your site, e.g. https://example.com
 favicon: "/assets/images/favicon.ico" # the favicon for your site
 
 # Yat date format
